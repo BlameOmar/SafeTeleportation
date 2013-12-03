@@ -36,7 +36,7 @@ public final class SafeTeleportation extends JavaPlugin implements Listener {
         if (destination.getY() < 1.0) {
             event.setCancelled(true);
             player.sendMessage("A mysterious force attempted to send you into the void. Fortunately for you, it failed.");
-        } else if (destination.getY() > 255.0 && player.getGameMode() != GameMode.CREATIVE) {
+        } else if (destination.getY() > destination.getWorld().getMaxHeight() && player.getGameMode() != GameMode.CREATIVE) {
             event.setCancelled(true);
             player.sendMessage("A mysterious force attempted to fling you into the sky. Fortunately for you, mere mortal, it failed.");
         }
